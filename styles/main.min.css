@@ -1,0 +1,167 @@
+@import "./vendors/bootstrap.min.css";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+ul {
+  padding-inline-start: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.homeBanner {
+  height: 40vh;
+  background-color: #005065;
+}
+
+.homeBannerImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+  height: 40vh;
+  width: 100%;
+}
+
+.homeBannerImage_mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 768px) {
+  .homeBanner,
+  .homeBannerImage {
+    height: 110vh;
+  }
+}
+.mainHeader {
+  position: fixed;
+  left: 0;
+  background-color: #fff;
+  height: 7vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 10px;
+  transition: 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  top: -7vh;
+  z-index: 1;
+}
+
+.mainHeader.shown {
+  top: 0;
+}
+
+.mainHeader .menuToggler {
+  height: 40px;
+  width: 40px;
+  color: #005065;
+  border: 1px solid;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.mobileMenu {
+  position: fixed;
+  left: -50vw;
+  top: 0;
+  height: 100vh;
+  width: 50vw;
+  background-color: #fff;
+  transition: 0.3s ease-in-out;
+  padding: 20px;
+  z-index: 10;
+}
+
+.mobileMenu.shown {
+  left: 0;
+}
+
+.mobileMenu_backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9;
+}
+
+@media (min-width: 768px) {
+  .mainHeader {
+    background-color: transparent;
+    box-shadow: none;
+    top: 0;
+    height: 9vh;
+    border-bottom: 1px solid rgba(190, 190, 190, 0.466);
+    align-items: stretch;
+  }
+  .mainHeader.shown {
+    background-color: #fff;
+  }
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #005065;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media (min-width: 768px) {
+  .navigation {
+    flex-direction: row;
+    height: 100%;
+  }
+  .navItem {
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-bottom: 5px solid transparent;
+  }
+  .navItem.active,
+  .navItem:hover {
+    border-bottom: 5px solid #ff6f61;
+  }
+  .navItem.active .navLink,
+  .navItem:hover .navLink {
+    color: #ff6f61;
+  }
+  .navLink {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+  }
+  .navLink:hover {
+    color: inherit;
+  }
+  .mainHeader.shown .navLink {
+    color: #005065;
+  }
+}
+.logoWrapper {
+  position: relative;
+  height: 100%;
+  width: 40vw;
+}
+
+@media (min-width: 768px) {
+  .logoWrapper {
+    width: 10vw;
+  }
+}

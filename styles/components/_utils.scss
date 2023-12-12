@@ -1,0 +1,13 @@
+@use "../mixins/mediaQuery" as mixins;
+
+.logoWrapper {
+  position: relative;
+  height: 100%;
+  width: 40vw;
+}
+
+@include mixins.media-query(medium) {
+  .logoWrapper {
+    width: 10vw;
+  }
+}
