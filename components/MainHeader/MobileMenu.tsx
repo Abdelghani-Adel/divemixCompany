@@ -4,7 +4,7 @@ import Navigation from "./Navigation";
 import HeaderLogo from "./HeaderLogo";
 
 const MobileMenu = () => {
-  const [showMobileMenu, setShowMobileMenu] = useState(true);
+  const [showMobileMenu, setShowMobileMenu] = useState(false);
   const toggleMobileMenu = () => setShowMobileMenu((prev) => !prev);
   return (
     <>

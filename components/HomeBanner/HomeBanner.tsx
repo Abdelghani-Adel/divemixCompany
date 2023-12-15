@@ -1,13 +1,60 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import bannerData from "@/data/homeBannerData.json";
+import AOS from "aos";
+import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 
 const HomeBanner = () => {
+  const [currentSliceIndex, setCurrentSliceIndex] = useState(0);
+
+  const next = () => {
+    setCurrentSliceIndex((prev) => {
+      if (prev == bannerData.length - 1) {
+        return 0;
+      }
+
+      return prev + 1;
+    });
+  };
+
+  const prev = () => {
+    setCurrentSliceIndex((prev) => {
+      if (prev == 0) {
+        return bannerData.length - 1;
+      }
+
+      return prev - 1;
+    });
+  };
+
+  useEffect(() => {
+    const autoInterval = setInterval(next, 5000);
+
+    return () => clearInterval(autoInterval);
+  }, [currentSliceIndex]);
+
   return (
     <section className="homeBanner">
-      <div className="homeBannerImage">
-        <Image src="/img/homeBanner/1.png" alt="" fill />
-        <div className="homeBannerImage_mask"></div>
-      </div>
+      {bannerData.map((slice, i) => (
+        <div key={i} className={`homeBannerSlice ${i == currentSliceIndex ? "active" : ""}`}>
+          <div className="homeBannerImage">
+            <Image src={slice.image} alt="" fill />
+            <div className="homeBannerImage_mask"></div>
+          </div>
+          <div className="homeBannerTxt">
+            <h1 className="homeBannerTitle">{slice.title}</h1>
+            <h2 className="homeBannerCaption">{slice.caption}</h2>
+          </div>
+        </div>
+      ))}
+
+      <button className="homeBannerNav left" onClick={prev}>
+        <IoIosArrowBack />
+      </button>
+      <button className="homeBannerNav right" onClick={next}>
+        <IoIosArrowForward />
+      </button>
     </section>
   );
 };

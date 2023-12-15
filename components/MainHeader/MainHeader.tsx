@@ -2,13 +2,13 @@
 import HeaderLogo from "./HeaderLogo";
 import MobileMenu from "./MobileMenu";
 import Navigation from "./Navigation";
-import { useFixedOnScroll } from "./useFixedOnScroll";
+import { useFixedOnScroll } from "./hooks/useFixedOnScroll";
 
 const MainHeader = () => {
-  const { visible } = useFixedOnScroll();
+  const { headerIsShown } = useFixedOnScroll();
 
   return (
-    <header className={`mainHeader ${visible ? "shown" : ""}`}>
+    <header className={`mainHeader ${headerIsShown ? "shown" : ""}`}>
       <HeaderLogo />
 
       <div className="d-none d-md-block">

@@ -2,18 +2,25 @@ import { useState, useEffect } from "react";
 
 export const useFixedOnScroll = () => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [isMobileView] = useState(window.innerWidth <= 768);
-  const [visible, setVisible] = useState(isMobileView);
+  const [isMobileView, setIsMobileView] = useState(false);
+  const [headerIsShown, setHeaderIsShown] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobileView(window.innerWidth <= 768);
+      setHeaderIsShown(window.innerWidth <= 768);
+    }
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
       if (isMobileView) {
-        setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+        setHeaderIsShown(prevScrollPos > currentScrollPos || currentScrollPos < 10);
         setPrevScrollPos(currentScrollPos);
       } else {
-        setVisible(currentScrollPos > 5);
+        setHeaderIsShown(currentScrollPos > 5);
       }
     };
 
@@ -24,5 +31,5 @@ export const useFixedOnScroll = () => {
     };
   }, [prevScrollPos]);
 
-  return { visible, isMobileView };
+  return { headerIsShown, isMobileView };
 };
