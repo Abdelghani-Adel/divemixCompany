@@ -57,6 +57,22 @@
   text-align: center;
 }
 
+.homeBanner_cta {
+  background-color: vars.$clr-main;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+
+  &:hover {
+    background-color: vars.$clr-main-hover;
+  }
+}
+
 .homeBannerNav {
   position: absolute;
   top: 50%;
@@ -152,5 +168,18 @@
 @include mixins.media-query(medium) {
   .aboutSection_img {
     height: 100%;
+  }
+}
+
+// ============================================== //
+// providers
+// ============================================== //
+.providerLogo {
+  position: relative;
+  height: 70px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }

@@ -14,9 +14,10 @@ const inter = Inter({ subsets: ["latin"] });
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     AOS.init({
-      offset: 100,
+      offset: 50,
       duration: 600,
       easing: "ease-in",
+      // once: true,
     });
   }, []);
 

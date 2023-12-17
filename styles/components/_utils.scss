@@ -8,6 +8,10 @@
   color: vars.$clr-main;
 }
 
+.clrMainHover {
+  color: vars.$clr-main-hover;
+}
+
 .logoWrapper {
   position: relative;
   height: 100%;
@@ -24,6 +28,7 @@
   position: relative;
   width: 150px;
 }
+
 .titleAnimation::before {
   position: absolute;
   content: "";
@@ -33,6 +38,10 @@
   bottom: 0;
   background: vars.$clr-main;
   border-radius: 2px;
+}
+
+.titleAnimation.hover::before {
+  background: vars.$clr-main-hover;
 }
 
 .titleAnimation::after {

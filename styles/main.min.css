@@ -25,7 +25,7 @@ ul {
   transition: 0.3s ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   top: -7vh;
-  z-index: 1;
+  z-index: 2;
 }
 
 .mainHeader.shown {
@@ -125,8 +125,39 @@ ul {
     color: #005065;
   }
 }
+.mainFooter {
+  background-color: #005065;
+  padding-top: 4rem;
+  color: #fff;
+}
+
+.footerForm {
+  height: calc(100% + 4rem);
+  width: 100%;
+  margin-top: -4rem;
+  padding-right: 10%;
+  padding-left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #06a3da;
+}
+
+.footerLogo {
+  height: 30%;
+  text-align: center;
+}
+
+.footerLogo img {
+  max-height: 100%;
+}
+
 .clrMain {
   color: #005065;
+}
+
+.clrMainHover {
+  color: #06a3da;
 }
 
 .logoWrapper {
@@ -154,6 +185,10 @@ ul {
   bottom: 0;
   background: #005065;
   border-radius: 2px;
+}
+
+.titleAnimation.hover::before {
+  background: #06a3da;
 }
 
 .titleAnimation::after {
@@ -222,7 +257,16 @@ ul {
 }
 
 .cardCta:hover {
-  background-color: #0287a8;
+  background-color: #06a3da;
+}
+
+.quoteRequst_wrapper {
+  background-color: #005065;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  height: 100%;
 }
 
 .homeBanner {
@@ -276,6 +320,22 @@ ul {
 .homeBannerCaption {
   font-size: 1rem;
   text-align: center;
+}
+
+.homeBanner_cta {
+  background-color: #005065;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: 10px 30px;
+  font-size: 1.3rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+}
+
+.homeBanner_cta:hover {
+  background-color: #06a3da;
 }
 
 .homeBannerNav {
@@ -359,11 +419,20 @@ ul {
 }
 
 .aboutSection_ctaBtn:hover {
-  background-color: #0287a8;
+  background-color: #06a3da;
 }
 
 @media (min-width: 768px) {
   .aboutSection_img {
     height: 100%;
   }
+}
+.providerLogo {
+  position: relative;
+  height: 70px;
+}
+
+.providerLogo img {
+  max-width: 100%;
+  max-height: 100%;
 }

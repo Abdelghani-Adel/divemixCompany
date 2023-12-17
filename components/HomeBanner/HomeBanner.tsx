@@ -45,6 +45,7 @@ const HomeBanner = () => {
           <div className="homeBannerTxt">
             <h1 className="homeBannerTitle">{slice.title}</h1>
             <h2 className="homeBannerCaption">{slice.caption}</h2>
+            <button className="homeBanner_cta">Request A Quote</button>
           </div>
         </div>
       ))}
