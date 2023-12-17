@@ -1,5 +1,4 @@
 import Card from "@/components/Card/Card";
-import Image from "next/image";
 import React from "react";
 import services from "@/data/servicesData.json";
 

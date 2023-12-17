@@ -6,6 +6,7 @@ type props = {
   title: string;
   desc: string;
   cta: string;
+  onClick?: () => {};
   ctaAction?: () => {};
 };
 
